@@ -4,17 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building the application..."'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'echo "Running tests..."'
+                sh 'chmod +x build.sh'
+                sh './build.sh'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo "Deploying the application..."'
+                sh 'chmod +x deploy.sh'
+                sh './deploy.sh'
             }
         }
     }
